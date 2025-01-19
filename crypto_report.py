@@ -16,14 +16,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Access the email credentials from environment variables
-sender_mail = os.getenv('EMAIL_USER')  # Email address
+sender_mail = st.secrets["email"]["EMAIL_USER"]  # Email address
 
 
 
 def send_mail(subject, body, filename, sender_mail, receiver_mail):
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
-    email_password = os.getenv('EMAIL_PASSWORD')  # Email password # Use environment variable for password
+    email_password = st.secrets["email"]["EMAIL_PASSWORD"]  # Email password # Use environment variable for password
 
     message = MIMEMultipart()
     message['From'] = sender_mail
@@ -117,7 +117,7 @@ if not email_id:
     st.warning("Please enter a valid email address.")
 
 # Your email address here
-sender_mail = os.getenv('EMAIL_USER')  # Replace this with your Gmail address
+sender_mail = st.secrets["email"]["EMAIL_USER"]  # Replace this with your Gmail address
 
 if st.button('Send Report') and email_id:
     # Make sure the email provided is valid
