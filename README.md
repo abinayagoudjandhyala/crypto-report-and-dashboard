@@ -78,11 +78,16 @@ This will launch the Streamlit app in your default browser.
 3. **Report Generation:** The app generates a CSV report that includes the top 10 cryptocurrencies with the highest price change (both positive and negative) in the last 24 hours.
 4. **Sending Email:** The user can click the "Send Report" button, which triggers the sending of the report via email (with CSV attachment) to the provided email address.
 
+
 ## Features Overview
 
 - **Top 10 Cryptos with Highest Price Increase:** Displays the top 10 cryptocurrencies that have seen the highest increase in their price in the last 24 hours.
 - **Top 10 Cryptos with Highest Price Decrease:** Displays the top 10 cryptocurrencies that have seen the largest decrease in their price in the last 24 hours.
-- **Crypto Dashboard:** A live crypto dashboard provides a real-time view of cryptocurrency market data. Check it out [here](https://abinaya.streamlit.app/).
+- **Crypto Dashboard:** A live crypto dashboard provides a real-time view of cryptocurrency market data. Check it out [here](https://crypto-live-dashboard.streamlit.app/).
+
+---
+
+This now includes the updated dashboard link. Let me know if you'd like more changes!
 
 ## File Structure
 
