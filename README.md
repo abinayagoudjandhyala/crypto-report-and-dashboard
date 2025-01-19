@@ -1,111 +1,104 @@
 
-# Crypto Report Generator
+# Crypto Report Generator and Dashboard
 
-Welcome to the **Crypto Report Generator**! This project allows users to generate cryptocurrency reports via email, with a clean and interactive interface built using Streamlit. It fetches real-time crypto data and sends detailed reports via email with a CSV attachment. 
+Welcome to the **Crypto Report Generator and Dashboard**! This project allows users to generate cryptocurrency reports via email, with a clean and interactive interface built using Streamlit. It fetches real-time crypto data and sends detailed reports via email with a CSV attachment.
 
-Additionally, the project includes a **live crypto dashboard** that visualizes this data, offering insights into the top 10 cryptocurrencies based on their 24-hour price change.  
+Additionally, the project includes a live crypto dashboard that visualizes this data, offering insights into the top 10 cryptocurrencies based on their 24-hour price change.
 
 ## Features
 
-- **Real-time Crypto Data**: Fetches the latest market data for over 250 cryptocurrencies using the CoinGecko API.
-- **Report Generation**: Generates a detailed cryptocurrency report with the top 10 cryptocurrencies that have seen the highest       price increase and decrease in the last 24 hours.
-- **Email Integration**: Sends the generated report via email with the option to attach the full data in CSV format.
-- **User Input**: Collects the recipient's email address for sending reports.
+- **Real-time Crypto Data:** Fetches the latest market data for over 250 cryptocurrencies using the CoinGecko API.
+- **Report Generation:** Generates a detailed cryptocurrency report with the top 10 cryptocurrencies that have seen the highest price increase and decrease in the last 24 hours.
+- **Email Integration:** Sends the generated report via email with the option to attach the full data in CSV format.
+- **User Input:** Collects the recipient's email address for sending reports.
 
 ## Technologies Used
 
-- **Python**: The main programming language used for backend logic.
-- **Streamlit**: For creating the interactive web interface.
-- **pandas**: For data manipulation and report generation.
-- **requests**: For fetching cryptocurrency data from the CoinGecko API.
-- **smtplib**: For sending emails with reports and attachments.
-- **dotenv**: To securely store and manage API keys and email credentials.
-- **HTML**: For formatting the email body with a rich structure.
+- **Python:** The main programming language used for backend logic.
+- **Streamlit:** For creating the interactive web interface.
+- **pandas:** For data manipulation and report generation.
+- **requests:** For fetching cryptocurrency data from the CoinGecko API.
+- **smtplib:** For sending emails with reports and attachments.
+- **dotenv:** (optional in local setup) To securely store and manage API keys and email credentials.
+- **HTML:** For formatting the email body with a rich structure.
 
 ## Installation
 
 ### Prerequisites
 
-To get started with the project, you need to have **Python** installed on your local machine.
+To get started with the project, you need to have Python installed on your local machine.
 
-1. **Clone the repository**:
+### Clone the repository:
 
-   ```bash
-   git clone https://github.com/abinayagoudjandhyala/crypto-report-generator.git
-   cd crypto-report-generator
-   ```
+```bash
+git clone https://github.com/abinayagoudjandhyala/crypto-report-and-dashboard.git
+cd crypto-report-and-dashboard
+```
 
-2. **Create a virtual environment**:
+### Create a virtual environment:
 
-   ```bash
-   python -m venv venv
-   ```
+```bash
+python -m venv venv
+```
 
-3. **Activate the virtual environment**:
+### Activate the virtual environment:
 
-   - For Windows:
+For **Windows**:
 
-     ```bash
-     venv\Scripts\activate
-     ```
+```bash
+venv\Scripts\activate
+```
 
-   - For macOS/Linux:
+For **macOS/Linux**:
 
-     ```bash
-     source venv/bin/activate
-     ```
+```bash
+source venv/bin/activate
+```
 
-4. **Install required dependencies**:
+### Install required dependencies:
 
-   Create a `.env` file in the root of your project directory and add your environment variables like so:
+You don’t need to create a `.env` file since the credentials are handled securely via Streamlit secrets. If you still want to test locally, you can use the `.streamlit/secrets.toml` file for credentials.
 
-   ```bash
-   EMAIL_USER=your-email@gmail.com
-   EMAIL_PASSWORD=your-email-password
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-   Then install the dependencies:
+### Run the Streamlit app:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+streamlit run crypto_report.py
+```
 
-5. **Run the Streamlit app**:
-
-   ```bash
-   streamlit run app.py
-   ```
-
-   This will launch the Streamlit app in your default browser.
+This will launch the Streamlit app in your default browser.
 
 ## How It Works
 
-1. **User Input**: The user provides their email address in the Streamlit UI.
-2. **Data Fetching**: The app fetches real-time cryptocurrency data from the CoinGecko API.
-3. **Report Generation**: The app generates a CSV report that includes the top 10 cryptocurrencies with the highest price change (both positive and negative) in the last 24 hours.
-4. **Sending Email**: The user can click the "Send Report" button, which triggers the sending of the report via email (with CSV attachment) to the provided email address.
+1. **User Input:** The user provides their email address in the Streamlit UI.
+2. **Data Fetching:** The app fetches real-time cryptocurrency data from the CoinGecko API.
+3. **Report Generation:** The app generates a CSV report that includes the top 10 cryptocurrencies with the highest price change (both positive and negative) in the last 24 hours.
+4. **Sending Email:** The user can click the "Send Report" button, which triggers the sending of the report via email (with CSV attachment) to the provided email address.
 
 ## Features Overview
 
-1. **Top 10 Cryptos with Highest Price Increase**: Displays the top 10 cryptocurrencies that have seen the highest increase in their price in the last 24 hours.
-2. **Top 10 Cryptos with Highest Price Decrease**: Displays the top 10 cryptocurrencies that have seen the largest decrease in their price in the last 24 hours.
-3. **Crypto Dashboard**: A **live crypto dashboard** provides a real-time view of cryptocurrency market data. [Check it out here](https://crypto-live-dashboard.streamlit.app/).
+- **Top 10 Cryptos with Highest Price Increase:** Displays the top 10 cryptocurrencies that have seen the highest increase in their price in the last 24 hours.
+- **Top 10 Cryptos with Highest Price Decrease:** Displays the top 10 cryptocurrencies that have seen the largest decrease in their price in the last 24 hours.
+- **Crypto Dashboard:** A live crypto dashboard provides a real-time view of cryptocurrency market data. Check it out [here](https://abinaya.streamlit.app/).
 
 ## File Structure
 
-```plaintext
-crypto-report-generator/
+```
+crypto-report-and-dashboard/
 │
 ├── crypto_report.py        # Main Streamlit app to run the UI
-├── .env                    # Environment variables for storing email credentials securely
+├── .streamlit/             # Contains Streamlit secrets and config files
+│   └── secrets.toml        # Email credentials for Streamlit deployment
 ├── requirements.txt        # Python dependencies
 ├── LICENSE                 # Project license file
 ├── README.md               # This readme file
 ```
 
 ## License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contributing
 
@@ -118,7 +111,12 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## Acknowledgments
 
-- **CoinGecko API**: For providing free access to cryptocurrency data.
-- **Streamlit**: For providing a simple and powerful tool for building interactive web apps.
-- **Python libraries**: pandas, requests, smtplib, and others that helped build this project.
+- **CoinGecko API:** For providing free access to cryptocurrency data.
+- **Streamlit:** For providing a simple and powerful tool for building interactive web apps.
+- **Python libraries:** pandas, requests, smtplib, and others that helped build this project.
+
+---
+
+### Streamlit App URL:
+[https://abinaya.streamlit.app/](https://abinaya.streamlit.app/)
 
