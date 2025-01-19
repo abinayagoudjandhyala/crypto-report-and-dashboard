@@ -7,13 +7,7 @@ import email.encoders
 import requests
 import pandas as pd
 from datetime import datetime
-import os
 
-
-from dotenv import load_dotenv
-
-# Load environment variables from the .env file
-load_dotenv()
 
 # Access the email credentials from environment variables
 sender_mail = st.secrets["email"]["EMAIL_USER"]  # Email address
